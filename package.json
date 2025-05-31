@@ -1,0 +1,28 @@
+{
+  "name": "hello-app",
+  "version": "1.0.0",
+  "description": "Greets Hello!",
+  "homepage": "https://github.com/VishwaGullapalli/hello-app#readme",
+  "bugs": {
+    "url": "https://github.com/VishwaGullapalli/hello-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VishwaGullapalli/hello-app.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
