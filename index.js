@@ -63,6 +63,20 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Application is running' });
 });
 
+process.on('SIGINT', () => {
+  console.log('Received SIGINT. Shutting down gracefully...');
+
+  server.close(() => {
+    console.log('Closed out remaining connections. Exiting now.');
+    process.exit(0);
+  });
+
+  setTimeout(() => {
+    console.error('Forcing shutdown after timeout.');
+    process.exit(1);
+  }, 10000);
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
   if (name) {
