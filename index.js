@@ -77,7 +77,7 @@ process.on('SIGINT', () => {
   }, 10000);
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server running on port ${port}`);
   if (name) {
     console.log(`Greeting message: Hello ${name}`);
